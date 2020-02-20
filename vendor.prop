@@ -34,6 +34,11 @@ ro.btconfig.chip=WCN3680
 ro.qualcomm.bt.hci_transport=smd
 persist.bt.enableAptXHD=true
 persist.bluetooth.bluetooth_audio_hal.disabled=true
+persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxhd-aac
+persist.bt.a2dp.aac_disable=true
+persist.bt.a2dp.aptx_disable=false
+persist.bt.a2dp.aptx_hd_disable=false
+persist.bt.a2dp_offload_cap=sbc-aptx-aptxhd
 
 # Boot
 sys.vendor.shutdown.waittime=500
