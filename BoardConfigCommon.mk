@@ -163,7 +163,8 @@ TARGET_FS_CONFIG_GEN := $(VENDOR_PATH)/config.fs
 #    /vendor
 
 BOARD_ROOT_EXTRA_SYMLINKS := \
-    /mnt/vendor/persist:/persist
+    /mnt/vendor/persist:/persist \
+    /data/tombstones:/tombstones
 
 BOARD_ROOT_EXTRA_FOLDERS := \
     /firmware \
