@@ -61,8 +61,6 @@ void vendor_load_properties()
 {
     check_device();
 
-    property_set("persist.radio.multisim.config", "dsds");
-    property_set("ro.telephony.default_network", "20,22");
     property_set("dalvik.vm.heapstartsize", heapstartsize);
     property_set("dalvik.vm.heapgrowthlimit", heapgrowthlimit);
     property_set("dalvik.vm.heapsize", heapsize);
