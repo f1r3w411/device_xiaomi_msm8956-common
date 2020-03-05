@@ -482,3 +482,7 @@ case "$buildvariant" in
         echo "4 4 1 4" > /proc/sys/kernel/printk
         ;;
 esac
+
+# Sound Control
+echo "0 0" > /sys/kernel/sound_control/headphone_gain
+echo 3 > /sys/kernel/sound_control/mic_gain
