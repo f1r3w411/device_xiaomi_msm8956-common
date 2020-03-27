@@ -569,9 +569,6 @@
     <!-- Flag indicating whether we should enable smart battery. -->
     <bool name="config_smart_battery_available">true</bool>
 
-    <!-- Smart Charing is available -->
-    <bool name="config_smartChargingAvailable">true</bool>
-
     <!-- Component name for default assistant on this device -->
     <string name="config_defaultAssistantComponentName">com.google.android.googlequicksearchbox/com.google.android.voiceinteraction.GsaVoiceInteractionService</string>
 
@@ -589,5 +586,4 @@
         <item>8</item>
         <item>13</item>
     </integer-array>
-
 </resources>

@@ -15,3 +15,4 @@ extern "C" void _ZN7android4base10LogMessageC1EPKcjNS0_5LogIdENS0_11LogSeverityE
 extern "C" void _ZN7android5FenceD1Ev() {
   // no-op, the explicit destructor was replaced with = default;
 }
+
