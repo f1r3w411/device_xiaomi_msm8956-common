@@ -16,7 +16,7 @@
 #
 
 # PE needed
-IS_PHONE := true
+# IS_PHONE := true
 TARGET_GAPPS_ARCH := arm64
 
 # Overlays
@@ -25,7 +25,9 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/xiaomi/msm8956-common/msm8956-common-vendor.mk)
-$(call inherit-product, vendor/havoc/config/phone-xxhdpi-2048-hwui-memory.mk)
+
+# Included Gapps
+# $(call inherit-product-if-exists, vendor/gapps/config.mk)
 
 ########################## LatinIME Google Prebuilt ################ START
 PRODUCT_PACKAGES += \
@@ -94,11 +96,8 @@ PRODUCT_COPY_FILES += \
     external/ant-wireless/antradio-library/com.dsi.ant.antradio_library.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.dsi.ant.antradio_library.xml
 
 # Device-specific Settings
-# PRODUCT_PACKAGES += \
-#     XiaomiParts
-
-# AdvancedControls
 PRODUCT_PACKAGES += \
+    XiaomiParts \
     AdvancedControls
 
 # Audio
@@ -369,7 +368,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.target.rc \
     init.qcom.usb.rc \
-    ueventd.qcom.rc
+    ueventd.qcom.rc \
+    init.spectrum.rc \
+    init.spectrum.sh
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \
@@ -416,7 +417,8 @@ PRODUCT_PACKAGES += \
 
 # HW crypto
 PRODUCT_PACKAGES += \
-    vendor.qti.hardware.cryptfshw@1.0-service-qti.qsee
+    vendor.qti.hardware.cryptfshw@1.0-service-qti.qsee \
+    vendor.qti.hardware.cryptfshw@1.0-service-dlsym-qti
 
 # Shim
 PRODUCT_PACKAGES += \
@@ -517,5 +519,3 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
 
-# GApps
-# include vendor/gapps/config.mk
