@@ -98,7 +98,9 @@ PRODUCT_COPY_FILES += \
 # Device-specific Settings
 PRODUCT_PACKAGES += \
     XiaomiParts \
-    AdvancedControls
+    AdvancedControls \
+    BlackPlayer \
+    RemovePackages
 
 # Audio
 PRODUCT_PACKAGES += \
