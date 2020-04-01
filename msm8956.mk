@@ -16,11 +16,8 @@
 #
 
 # PE needed
-IS_PHONE := true
+# IS_PHONE := true
 TARGET_GAPPS_ARCH := arm64
-
-# RRO (Runtime Resource Overlay)
-PRODUCT_ENFORCE_RRO_TARGETS := *
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
@@ -28,6 +25,20 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
 
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/xiaomi/msm8956-common/msm8956-common-vendor.mk)
+
+# Included Gapps
+# $(call inherit-product-if-exists, vendor/gapps/config.mk)
+
+########################## LatinIME Google Prebuilt ################ START
+PRODUCT_PACKAGES += \
+    LatinIMEGooglePrebuilt
+
+DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/Googlekeyboard/overlay
+
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/Googlekeyboard/product/usr,$(TARGET_COPY_OUT_PRODUCT)/usr) \
+    $(LOCAL_PATH)/Googlekeyboard/product/etc/sysconfig/google-hiddenapi-LatinIME-keyboard-whitelist.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/google-hiddenapi-LatinIME-keyboard-whitelist.xml
+########################## LatinIME Google Prebuilt ################ END
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
@@ -215,10 +226,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     org.codeaurora.camera
 
-# Fingerprint
-PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service
-
 # FM
 PRODUCT_PACKAGES += \
     FMRadio \
@@ -348,9 +355,9 @@ PRODUCT_PACKAGES += \
     android.hardware.power@1.2-service-qti
 
 # QTI performance
-#PRODUCT_BOOT_JARS += \
-     QPerformance \
-     UxPerformance
+ #PRODUCT_BOOT_JARS += \
+     #QPerformance \
+     #UxPerformance
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -359,12 +366,9 @@ PRODUCT_PACKAGES += \
     move_widevine_data.sh
 
 PRODUCT_PACKAGES += \
-    init.qcom.rc \
     init.target.rc \
     init.qcom.usb.rc \
-    ueventd.qcom.rc \
-    init.spectrum.rc \
-    init.spectrum.sh
+    ueventd.qcom.rc
 
 # RenderScript HAL
 PRODUCT_PACKAGES += \
@@ -381,17 +385,18 @@ PRODUCT_PACKAGES += \
     libcnefeatureconfig \
     libxml2 \
     telephony-ext \
+    ims-ext-common_system \
     rild \
     libprotobuf-cpp-full \
     qti-telephony-hidl-wrapper \
     qti_telephony_hidl_wrapper.xml \
     qti-telephony-utils \
     qti_telephony_utils.xml \
-    ims-ext-common_system \
     ims_ext_common.xml
 
 PRODUCT_BOOT_JARS += \
-    telephony-ext
+    telephony-ext \
+    ims-ext-common_system
 
 # Needed by some RILs and for some gApps packages
 PRODUCT_PACKAGES += \
@@ -410,7 +415,8 @@ PRODUCT_PACKAGES += \
 
 # HW crypto
 PRODUCT_PACKAGES += \
-    vendor.qti.hardware.cryptfshw@1.0-service-qti.qsee
+    vendor.qti.hardware.cryptfshw@1.0-service-qti.qsee \
+    vendor.qti.hardware.cryptfshw@1.0-service-dlsym-qti
 
 # Shim
 PRODUCT_PACKAGES += \
@@ -442,6 +448,10 @@ PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-impl \
     android.hardware.thermal@1.0-service \
     thermal.msm8952
+
+# Trust HAL
+PRODUCT_PACKAGES += \
+    vendor.lineage.trust@1.0-service
 
 # USB HAL
 PRODUCT_PACKAGES += \
@@ -511,5 +521,3 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
 
-# Build with GApps
-# include vendor/gapps/config.mk
