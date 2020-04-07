@@ -99,8 +99,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     XiaomiParts \
     AdvancedControls \
-    BlackPlayer \
-    RemovePackages
+    Phonograph
 
 # Audio
 PRODUCT_PACKAGES += \
