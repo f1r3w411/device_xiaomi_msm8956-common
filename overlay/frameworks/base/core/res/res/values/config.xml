@@ -630,7 +630,6 @@
     </string-array>
 
     <!-- Whether the device supports Smart Pixels -->
-    <bool name="config_enableSmartPixels">true</bool>
     <bool name="config_enableSmartPixels">false</bool>
 
     <!-- Whether to artificially interpret all signal strengths as
