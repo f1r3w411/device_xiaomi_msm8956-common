@@ -138,7 +138,7 @@ TARGET_HW_DISK_ENCRYPTION := true
 #TARGET_KEYMASTER_SKIP_WAITING_FOR_QSEE := true
 
 # Exclude serif fonts for saving system.img size.
-EXCLUDE_SERIF_FONTS := true
+# EXCLUDE_SERIF_FONTS := true
 
 # Filesystem
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
