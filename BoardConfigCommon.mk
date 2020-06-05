@@ -39,7 +39,7 @@ TARGET_BOARD_PLATFORM_GPU := qcom-adreno510
 BUILD_BROKEN_DUP_RULES := true
 TARGET_USES_64_BIT_BINDER := true
 ENABLE_CPUSETS := true
-BUILD_BROKEN_PHONY_TARGETS := true
+# BUILD_BROKEN_PHONY_TARGETS := true
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := msm8952
@@ -55,8 +55,6 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8956
-#TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
@@ -92,6 +90,7 @@ BOARD_USES_ALSA_AUDIO := true
 BOARD_SUPPORTS_SOUND_TRIGGER := true
 USE_CUSTOM_AUDIO_POLICY := 1
 USE_XML_AUDIO_POLICY_CONF := 1
+TARGET_USES_AOSP_FOR_AUDIO := false
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH_QCOM := true
@@ -135,11 +134,11 @@ OVERRIDE_RS_DRIVER:= libRSDriver_adreno.so
 
 # Encryption
 TARGET_HW_DISK_ENCRYPTION := true
-TARGET_LEGACY_HW_DISK_ENCRYPTION := true
-TARGET_KEYMASTER_SKIP_WAITING_FOR_QSEE := true
+#TARGET_LEGACY_HW_DISK_ENCRYPTION := true
+#TARGET_KEYMASTER_SKIP_WAITING_FOR_QSEE := true
 
 # Exclude serif fonts for saving system.img size.
-EXCLUDE_SERIF_FONTS := true
+# EXCLUDE_SERIF_FONTS := true
 
 # Filesystem
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
@@ -255,9 +254,6 @@ WIFI_HIDL_FEATURE_DISABLE_AP_MAC_RANDOMIZATION := true
 
 # Inherit from the proprietary version
 -include vendor/xiaomi/msm8956-common/BoardConfigVendor.mk
-
-# Tap-to-Wake
-TARGET_TAP_TO_WAKE_NODE := "/proc/touchpanel/double_tap_enable"
 
 # Sensors
 USE_SENSOR_MULTI_HAL := true
