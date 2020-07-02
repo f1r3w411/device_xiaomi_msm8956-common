@@ -405,8 +405,7 @@ PRODUCT_PACKAGES += \
     ims_ext_common.xml
 
 PRODUCT_BOOT_JARS += \
-    telephony-ext \
-    ims-ext-common_system
+    telephony-ext
 
 # Needed by some RILs and for some gApps packages
 PRODUCT_PACKAGES += \
