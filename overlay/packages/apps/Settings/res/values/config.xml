@@ -22,8 +22,4 @@
 
     <!-- Device specific doze/part package -->
     <string name="config_customDozePackage" translatable="false">org.lineageos.settings/org.lineageos.settings.doze.DozeSettingsActivity</string>
-
-    <!-- Config to use FM without Headset, default disabled --> 	
-    <bool name="config_enableWirelessFM" translatable="false">false</bool>
-
 </resources>
