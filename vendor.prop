@@ -78,9 +78,6 @@ persist.data.iwlan.enable=true
 # FRP
 ro.frp.pst=/dev/block/platform/soc.0/7824900.sdhci/by-name/config
 
-# Fingerprint
-ro.hardware.fingerprint=fpc
-
 # GPS
 persist.gps.qc_nlp_in_use=1
 persist.loc.nlp_name=com.qualcomm.location
@@ -94,7 +91,7 @@ debug.mdpcomp.logs=0
 debug.sf.hw=0
 debug.sf.disable_backpressure=1 
 debug.sf.recomputecrop=0
-debug.sf.latch_unsignaled=0
+debug.sf.latch_unsignaled=1
 dev.pm.dyn_samplingrate=1
 persist.demo.hdmirotationlock=false
 persist.hwc.mdpcomp.enable=true
@@ -137,7 +134,7 @@ DEVICE_PROVISIONED=1
 ril.subscription.types=RUIM
 rild.libargs=-d /dev/smd0
 rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
-ro.telephony.default_network=22,20
+ro.telephony.default_network=10,10
 telephony.lteOnCdmaDevice=1
 persist.dbg.ims_volte_enable=1
 persist.dbg.volte_avail_ovr=1
@@ -145,6 +142,10 @@ persist.dbg.vt_avail_ovr=1
 persist.radio.apm_sim_not_pwdn=1
 persist.radio.hw_mbn_update=0
 persist.radio.multisim.config=dsds
+persist.radio.VT_ENABLE=1
+persist.radio.VT_HYBRID_ENABLE=1
+persist.radio.volte.dan_support=true
+persist.radio.data_ltd_sys_ind=1
 persist.radio.videopause.mode=1
 persist.radio.schd.cache=3500
 persist.vendor.radio.custom_ecc=1
@@ -153,13 +154,20 @@ persist.vendor.radio.sib16_support=1
 persist.vendor.radio.add_power_save=1
 persist.vendor.radio.start_ota_daemon=1
 persist.vendor.radio.adb_log_on=1
+persist.vendor.radio.report_codec=1
 persist.radio.sw_mbn_update=0
 persist.data.qmi.adb_logmask=0
 persist.radio.aosp_usr_pref_sel=true
 persist.sys.fflag.override.settings_network_and_internet_v2=true
+persist.sys.cust.lte_config=true
 persist.vendor.radio.data_ltd_sys_ind=1
 persist.vendor.radio.data_con_rprt=1
 persist.radio.calls.on.ims=1
+service.qti.ims.enabled=1
+
+# DualSim
+PRODUCT_DEVICE_DS := true
+persist.vendor.radio.block_allow_data=0
 
 # TCP
 net.tcp.2g_init_rwnd=10

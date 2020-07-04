@@ -16,21 +16,15 @@
 #
 
 # PE needed
-# IS_PHONE := true
+IS_PHONE := true
 TARGET_GAPPS_ARCH := arm64
-
-#Maintainer
-XTENDED_MAINTAINER := _firewall_
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
+#DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
 
 # Get non-open-source specific aspects
 $(call inherit-product-if-exists, vendor/xiaomi/msm8956-common/msm8956-common-vendor.mk)
-
-# Included Gapps
-# $(call inherit-product-if-exists, vendor/gapps/config.mk)
 
 ########################## LatinIME Google Prebuilt ################ START
 PRODUCT_PACKAGES += \
@@ -395,8 +389,11 @@ PRODUCT_PACKAGES += \
     libcnefeatureconfig \
     libxml2 \
     telephony-ext \
-    ims-ext-common_system \
+    telephony-ext.xml \
+    ims-ext-common \
+    qti-telephony-common \
     rild \
+    librsjni \
     libprotobuf-cpp-full \
     qti-telephony-hidl-wrapper \
     qti_telephony_hidl_wrapper.xml \
@@ -406,11 +403,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     telephony-ext
-
-# Needed by some RILs and for some gApps packages
-PRODUCT_PACKAGES += \
-    librsjni \
-    libprotobuf-cpp-full
 
 # Seccomp policy
 PRODUCT_COPY_FILES += \
@@ -431,26 +423,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libshim
 
-# Strip debug
-PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
-PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
-
 # TextClassifier smart selection model files
 PRODUCT_PACKAGES += \
-    textclassifier.bundle1 \
-    textclassifier.ar.model \
-    textclassifier.de.model \
-    textclassifier.en.model \
-    textclassifier.es.model \
-    textclassifier.fr.model \
-    textclassifier.it.model \
-    textclassifier.nl.model \
-    textclassifier.pl.model \
-    textclassifier.pt.model \
-    textclassifier.ru.model \
-    textclassifier.tr.model \
-    textclassifier.zh.model \
-    textclassifier.zh-Hant.model
+    textclassifier.bundle1
 
 # Thermal
 PRODUCT_PACKAGES += \
@@ -509,6 +484,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libjson \
     libtinyxml
+
+# Wi-Fi Display
+PRODUCT_PACKAGES += \
+    libaacwrapper \
+    libnl
 
 # WiFi
 PRODUCT_PACKAGES += \
