@@ -20,7 +20,7 @@
 TARGET_GAPPS_ARCH := arm64
 
 #Maintainer
-XTENDED_MAINTAINER := _firewall_
+XTENDED_MAINTAINER := 🔥firewall🔥
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
