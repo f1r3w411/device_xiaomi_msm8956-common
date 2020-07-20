@@ -145,8 +145,13 @@ PRODUCT_COPY_FILES += \
 
 # VoLTE
 PRODUCT_PROPERTY_OVERRIDES += \
+   persist.dbg.ims_volte_enable=1 \
    persist.dbg.volte_avail_ovr=1 \
-   persist.dbg.vt_avail_ovr=1
+   persist.dbg.vt_avail_ovr=1 \
+   persist.dbg.wfc_avail_ovr=1 \
+   persist.radio.volte.dan_support=true \
+   persist.radio.VT_ENABLE=1 \
+   persist.vendor.vt.supported=1
 
 # XML Audio configuration files
 PRODUCT_COPY_FILES += \
