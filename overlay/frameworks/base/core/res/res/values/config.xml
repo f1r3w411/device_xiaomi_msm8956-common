@@ -671,4 +671,7 @@
    <!-- Enable dual LTE capability support-->
    <bool name="config_dual_LTE_capability">true</bool>
 
+    <!-- Wired/BT headset focus mode -->
+    <bool name="config_deviceRingtoneFocusMode">true</bool>
+
 </resources>
