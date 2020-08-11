@@ -260,3 +260,8 @@ USE_SENSOR_MULTI_HAL := true
 
 # Enable DRM plugins 64 bit compilation
 TARGET_ENABLE_MEDIADRM_64 := true
+
+# Face Unlock
+# Set TARGET_FACE_UNLOCK_SUPPORTED := true to build face unlock packages.
+# Do this if your device supports face unlock (which it mostly does).
+TARGET_FACE_UNLOCK_SUPPORTED := true
