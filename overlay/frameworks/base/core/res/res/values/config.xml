@@ -726,4 +726,12 @@
         <item>13</item>
     </integer-array>
 
+    <!-- Whether device supports variable refresh rate -->
+    <bool name="config_hasVariableRefreshRate">false</bool>
+    <!-- Default setting for refresh rate
+      0 = Auto
+      1 = 60HZ
+      2 = 90Hz -->
+    <!-- <integer name="config_defaultVariableRefreshRateSetting">2</integer> -->
+
 </resources>
