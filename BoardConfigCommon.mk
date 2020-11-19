@@ -260,6 +260,3 @@ USE_SENSOR_MULTI_HAL := true
 
 # Enable DRM plugins 64 bit compilation
 TARGET_ENABLE_MEDIADRM_64 := true
-
-#Face Unlock
-$(call inherit-product-if-exists, external/motorola/faceunlock/config.mk)
