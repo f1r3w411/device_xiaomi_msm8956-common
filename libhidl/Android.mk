@@ -18,7 +18,7 @@ include $(CLEAR_VARS)
 LOCAL_SRC_FILES := \
 
 LOCAL_SHARED_LIBRARIES := \
-    libhidltransport
+    libhidlbase
 
 LOCAL_C_INCLUDES := \
 
@@ -34,7 +34,7 @@ include $(CLEAR_VARS)
 LOCAL_SRC_FILES := \
 
 LOCAL_SHARED_LIBRARIES := \
-    libhidltransport
+    libhidlbase
 
 LOCAL_C_INCLUDES := \
 
