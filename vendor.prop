@@ -189,6 +189,3 @@ persist.ims.disableADBLogs=1
 persist.ims.disableDebugLogs=1
 persist.ims.disableIMSLogs=1
 persist.ims.disableQXDMLogs=1
-
-# Vendor security patch value
-ro.vendor.build.security_patch=2021-02-05
