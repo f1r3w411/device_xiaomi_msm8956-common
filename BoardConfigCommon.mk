@@ -265,3 +265,6 @@ TARGET_ENABLE_MEDIADRM_64 := true
 # Set TARGET_FACE_UNLOCK_SUPPORTED := true to build face unlock packages.
 # Do this if your device supports face unlock (which it mostly does).
 TARGET_FACE_UNLOCK_SUPPORTED := true
+
+# Security patch level
+VENDOR_SECURITY_PATCH := 2021-02-05
