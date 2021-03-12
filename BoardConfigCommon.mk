@@ -260,3 +260,6 @@ USE_SENSOR_MULTI_HAL := true
 
 # Enable DRM plugins 64 bit compilation
 TARGET_ENABLE_MEDIADRM_64 := true
+
+# Security patch level
+VENDOR_SECURITY_PATCH := 2021-03-05
